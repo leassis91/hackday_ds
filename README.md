@@ -66,7 +66,7 @@ Variable | Definition
  
 ## 💡 Conclusions
 
-  * Even though our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE seems only to be useful when used with *extremely imbalanced data*
+  * Even though our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE seems only to be useful when applied at *extremely imbalanced data*
   * OneHotEncoding is the best approach for these type of dataset (few features, few unique labels);
   * For every Feature Engineering method I've tried, it seemed like it followed the rule: more features, more scores (eventually it breaks for like 50+ features);
   * OrdinalEncoder approach scored better than LabelEncoder (yet keep in mind that if you OneHotEncode the labels, it should score higher)
