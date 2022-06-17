@@ -88,6 +88,8 @@ The approach was divided in the following parts:
    4. After trying Ordinal and LabelEncoding, Standardization combined with OneHotEncoding made the difference to reach top scores.
    5. Even though the final model in notebook is XGBClassifier (best score tested later), we managed to reach 3rd place with LGBM with **default parameters**.
 
+You can check our final code [here](https://github.com/leassis91/hackday_ds/blob/master/bank-account-prediction-xgbclassifier-pipeline.ipynb) and in [Kaggle](https://www.kaggle.com/code/leandrodestefani/bank-account-prediction-xgbclassifier-pipeline).
+
 <br>
 
 ## 💡 Conclusions
