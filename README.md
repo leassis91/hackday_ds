@@ -58,9 +58,34 @@ Variable | Definition
  |  education_level                       | User education level.
  |  job_type                              | Kind of work.
  
- ## 🧾 Evaluation Metric
+## 🧾 Evaluation Metric
  
  The model evaluation metric for this competition was the "Mean F1-Score". The F1-Score can be interpreted as a harmonic average of "precision" and "recall".
 
  The F1 metric weights recall and accuracy equally, and a good ranking algorithm will maximize accuracy and recall simultaneously.
  
+## 💡 Conclusions
+
+  * Even though our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE seems only to be useful when used with *extremely imbalanced data*
+  * OneHotEncoding is the best approach for these type of dataset (few features, few unique labels);
+  * For every Feature Engineering method I've tried, it seemed like it followed the rule: more features, more scores (eventually it breaks for like 50+ features);
+  * OrdinalEncoder approach scored better than LabelEncoder (yet keep in mind that if you OneHotEncode the labels, it should score higher)
+  * "Be Data-Centric", as Andrew Ng would say. Our solution which made it to the 3rd place was sent without any hyperparameter fine-tuning (a simply LGBMClassifier()).
+  
+<!--   ## References
+
+- Statistics How To - [Interquartile Range](https://www.statisticshowto.com/probability-and-statistics/interquartile-range/#:~:text=The%20interquartile%20range%20(IQR)%20is,of%20that%20interval%20of%20space.&text=If%20you%20want%20to%20know,the%20first%20or%20lower%20quartile.)
+- Blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/)
+- Dataset from [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
+- Data Information from [Geocenter](https://geodacenter.github.io/data-and-lab/KingCounty-HouseSales2015/) -->
+
+If you have any other suggestion or question, feel free to contact me via [LinkedIn](https://linkedin.com/in/leandrodestefani)
+
+
+## 💪 How to contribute
+
+1. Fork the project.
+2. Create a new branch with your changes: `git checkout -b my-feature`
+3. Save your changes and create a commit message telling you what you did: `git commit -m" feature: My new feature "`
+4. Submit your changes: `git push origin my-feature`
+  
