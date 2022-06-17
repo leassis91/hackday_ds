@@ -33,7 +33,7 @@ developed should provide an indication of the state of financial inclusion in Ke
 
 ### Code Used:
 
-* Python Version : 3.9
+* Python Version : 3.10
 * Packages : Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 
 ### Importing Dataset:
