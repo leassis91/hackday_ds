@@ -109,7 +109,7 @@ You can check our final code [here](https://github.com/leassis91/hackday_ds/blob
 
 <br>
 
-If you have any other suggestion or question, feel free to contact me via [LinkedIn](https://linkedin.com/in/leandrodestefani)
+If you have any other suggestion or question, feel free to contact me via [LinkedIn](https://linkedin.com/in/leandrodestefani).
 
 
 ## 💪 How to contribute
