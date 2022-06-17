@@ -19,6 +19,7 @@ Assih also states that there are three main reasons why African nations should f
   deal with smugglers and traffickers.
   3. Boost public and private sector connectivity for sustainable growth by supporting African start-ups.
 
+<br>
 
 ## 📌 Problem Statement
 
@@ -27,36 +28,47 @@ Assih also states that there are three main reasons why African nations should f
 The purpose of this competition is to create a machine learning model to predict which individuals will and will not use a bank account. The models and solutions
 developed should provide an indication of the state of financial inclusion in Kenya, Rwanda, Tanzania and Uganda.
 
-
+<br>
 
 ## 💾 Data Understanding
 
-### Code Used:
+### - Code Used:
 
 * Python Version : 3.10
 * Packages : Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn
 
-### Importing Dataset:
+### - Importing Dataset:
 
 * Kaggle: https://www.kaggle.com/competitions/inclusao-financeira-na-africa/data
 
-### Data Dictionary
+### - Data Dictionary
 
-Variable | Definition
------------- | -------------
- |  country                               | Origin country.
- |  year                                  | Year of financial inclusion. 
- |  uniqueid                              | User Id.
- |  bank_account                          | Target Value: whether user has a bank account or not .
- |  location_type                         | Type of user's location: rural or urban.
- |  cellphone_access                      | Whether user has a cellphone or not
- |  household_size                        | Number of persons in a private household related to user.
- |  age_of_respondent                     | User age.
- |  gender_of_respondent                  | User gender.
- |  relationship_with_head                | Status with account owner.
- |  marital_status                        | User civil status.
- |  education_level                       | User education level.
- |  job_type                              | Kind of work.
+  Variable | Definition
+  ------------ | -------------
+   |  country                               | Origin country.
+   |  year                                  | Year of financial inclusion. 
+   |  uniqueid                              | User Id.
+   |  bank_account                          | Target Value: whether user has a bank account or not .
+   |  location_type                         | Type of user's location: rural or urban.
+   |  cellphone_access                      | Whether user has a cellphone or not
+   |  household_size                        | Number of persons in a private household related to user.
+   |  age_of_respondent                     | User age.
+   |  gender_of_respondent                  | User gender.
+   |  relationship_with_head                | Status with account owner.
+   |  marital_status                        | User civil status.
+   |  education_level                       | User education level.
+   |  job_type                              | Kind of work.
+ 
+ 
+ ### - Data Exploration
+ 
+   1. The train data is contains large number of categorical features that should be treated. For the 1º cicle run, we tried Ordinal Encoding, then proceed with LabelEncoding, and OneHotEncoding.
+   2. The numeric columns are not normally distributed, which need to be standardized. 
+   3. The target variable is kind of imbalanced (14% for 1-class), it might have to be treated.
+   4. The outliers of the numeric column should be treated.
+
+ 
+ <br>
  
 ## 🧾 Evaluation Metric
  
@@ -64,20 +76,36 @@ Variable | Definition
 
  The F1 metric weights recall and accuracy equally, and a good ranking algorithm will maximize accuracy and recall simultaneously.
  
+<br>
+
+## 🔬 Solution Approach
+
+The approach was divided in the following parts:
+
+   1. Building the first model with a Logistic Regression Model, just to find a baseline score.
+   2. Building the second model with Random Forest, then proceed with Gradient Boostings Models like LGBM and XGB.
+   3. Balancing the data with SMOTE technique didn't seem very effective, so we dropped it.
+   4. After trying Ordinal and LabelEncoding, Standardization combined with OneHotEncoding made the difference to reach top scores.
+   5. Even though the final model in notebook is XGBClassifier (best score tested later), we managed to reach 3rd place with LGBM with **default parameters**.
+
+<br>
+
 ## 💡 Conclusions
 
-  * Even though our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE seems only to be useful when applied at *extremely imbalanced data*
+  * The big challenge of the competition was: to handle or not the imbalanced data. Still our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE does not take into consideration neighboring examples can be from other classes. This can increase the overlapping of classes and can introduce additional noise, and it seems only to be useful when applied at *extremely imbalanced data*.
   * OneHotEncoding is the best approach for these type of dataset (few features, few unique labels);
-  * For every Feature Engineering method I've tried, it seemed like it followed the rule: more features, more scores (eventually it breaks for like 50+ features);
+  * For every Feature Engineering method I've tried, it seemed like it followed the rule: greater number of features equals higher scores (eventually it breaks for like 50+ features);
   * OrdinalEncoder approach scored better than LabelEncoder (yet keep in mind that if you OneHotEncode the labels, it should score higher)
   * "Be Data-Centric", as Andrew Ng would say. Our solution which made it to the 3rd place was sent without any hyperparameter fine-tuning (a simply LGBMClassifier()).
   
-<!--   ## References
+<br>
+  
+  ## 📖 References
 
-- Statistics How To - [Interquartile Range](https://www.statisticshowto.com/probability-and-statistics/interquartile-range/#:~:text=The%20interquartile%20range%20(IQR)%20is,of%20that%20interval%20of%20space.&text=If%20you%20want%20to%20know,the%20first%20or%20lower%20quartile.)
-- Blog [Seja um Data Scientist](https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/)
-- Dataset from [Kaggle](https://www.kaggle.com/harlfoxem/housesalesprediction)
-- Data Information from [Geocenter](https://geodacenter.github.io/data-and-lab/KingCounty-HouseSales2015/) -->
+- DataCamp - [Diving Deep with Imbalanced Data](https://www.datacamp.com/tutorial/diving-deep-imbalanced-data)
+- Neptune.ai - [How to Deal With Imbalanced Classification and Regression Data](https://neptune.ai/blog/how-to-deal-with-imbalanced-classification-and-regression-data)
+
+<br>
 
 If you have any other suggestion or question, feel free to contact me via [LinkedIn](https://linkedin.com/in/leandrodestefani)
 
