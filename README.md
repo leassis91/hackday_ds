@@ -94,7 +94,7 @@ You can check our final code [here](https://github.com/leassis91/hackday_ds/blob
 
 ## 💡 Conclusions
 
-  * The big challenge of the competition was: to handle or not the imbalanced data. Still our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE does not take into consideration neighboring examples can be from other classes. This can increase the overlapping of classes and can introduce additional noise, and it seems only to be useful when applied at *extremely imbalanced data*.
+  * The big challenge of the competition was: to handle or not the imbalanced data. Still our data was imbalanced (only 14% did have a bank account), the strategies used always decreased the score. SMOTE does not take into consideration neighboring examples can be from other classes. This can increase the overlapping of classes and can introduce additional noise, and it seems only to be useful when applied at *extremely imbalanced data* (check references articles).
   * OneHotEncoding is the best approach for these type of dataset (few features, few unique labels);
   * For every Feature Engineering method I've tried, it seemed like it followed the rule: greater number of features equals higher scores (eventually it breaks for like 50+ features);
   * OrdinalEncoder approach scored better than LabelEncoder (yet keep in mind that if you OneHotEncode the labels, it should score higher)
@@ -104,9 +104,9 @@ You can check our final code [here](https://github.com/leassis91/hackday_ds/blob
   
   ## 📖 References
 
+- JAMIA - [The harm of class imbalance corrections for risk prediction models: illustration and simulation using logistic regression](https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocac093/6605096?searchresult=1&login=false)
 - DataCamp - [Diving Deep with Imbalanced Data](https://www.datacamp.com/tutorial/diving-deep-imbalanced-data)
 - Neptune.ai - [How to Deal With Imbalanced Classification and Regression Data](https://neptune.ai/blog/how-to-deal-with-imbalanced-classification-and-regression-data)
-
 <br>
 
 If you have any other suggestion or question, feel free to contact me via [LinkedIn](https://linkedin.com/in/leandrodestefani).
