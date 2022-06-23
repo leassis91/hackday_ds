@@ -102,7 +102,7 @@ You can check our final code [here](https://github.com/leassis91/hackday_ds/blob
   
 <br>
   
-  ## 📖 References
+  ## 🔗 References
 
 - JAMIA - [The harm of class imbalance corrections for risk prediction models: illustration and simulation using logistic regression](https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocac093/6605096?searchresult=1&login=false)
 - DataCamp - [Diving Deep with Imbalanced Data](https://www.datacamp.com/tutorial/diving-deep-imbalanced-data)
